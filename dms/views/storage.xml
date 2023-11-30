@@ -115,7 +115,7 @@
                         name="action_storage_migrate"
                         type="object"
                         string="Migrate Files"
-                        attrs="{'invisible': [('save_type', '=', 'attachment')]}"
+                        invisible="save_type = 'attachment'"
                     />
                     <button
                         type="action"
@@ -169,18 +169,18 @@
                             <field name="is_hidden" />
                             <field
                                 name="inherit_access_from_parent_record"
-                                attrs="{'invisible': [('save_type', '!=', 'attachment')]}"
+                                invisible="save_type != 'attachment'"
                             />
                             <field
                                 name="include_message_attachments"
-                                attrs="{'invisible': [('save_type', '!=', 'attachment')]}"
+                                invisible="save_type != 'attachment'"
                             />
                         </group>
                         <group>
                             <field name="company_id" />
                             <field
                                 name="model_ids"
-                                attrs="{'invisible': [('save_type', '!=', 'attachment')]}"
+                                invisible="save_type != 'attachment'"
                             />
                         </group>
                     </group>
@@ -188,7 +188,7 @@
                         <page
                             name="page_roots"
                             string="Root Directories"
-                            attrs="{'invisible': [('id', '=', False)]}"
+                            invisible="id = False"
                         >
                             <field
                                 name="root_directory_ids"

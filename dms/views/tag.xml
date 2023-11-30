@@ -118,7 +118,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active = True"
                     />
                     <div class="oe_button_box" name="button_box" />
                     <div class="oe_title">

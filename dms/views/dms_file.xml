@@ -363,14 +363,14 @@
                         name="lock"
                         type="object"
                         string="Lock"
-                        attrs="{'invisible':['|',('is_locked', '!=', False),('permission_write', '=', False)]}"
+                        invisible="is_locked != False OR permission_write = False"
                     />
                     <button
                         class="oe_highlight"
                         name="unlock"
                         type="object"
                         string="Unlock"
-                        attrs="{'invisible':['|',('is_locked', '=', False),('is_lock_editor', '=', False)]}"
+                        invisible="is_locked != False OR permission_write = False"
                     />
                     <button
                         name="%(portal.portal_share_action)d"
@@ -384,7 +384,7 @@
                         name="web_ribbon"
                         title="Archived"
                         bg_color="bg-danger"
-                        attrs="{'invisible': [('active', '=', True)]}"
+                        invisible="active = True"
                     />
                     <div class="oe_button_box" name="button_box" />
                     <field
@@ -405,7 +405,7 @@
                                 name="path_json"
                                 widget="path_json"
                                 options="{'prefix': True, 'suffix': False}"
-                                attrs="{'invisible': ['|', ('name', '=', False), ('directory_id', '=', False)]}"
+                                invisible="name = False OR directory_id = False"
                             />
                         </h4>
                     </div>
@@ -450,16 +450,16 @@
                         <field
                             name="res_model"
                             readonly="True"
-                            attrs="{'invisible': [('storage_id_save_type', '!=', 'attachment')]}"
+                            invisible="storage_id_save_type != attachment"
                         />
                         <field
                             name="res_id"
                             readonly="True"
-                            attrs="{'invisible': [('storage_id_save_type', '!=', 'attachment')]}"
+                            invisible="storage_id_save_type != attachment"
                         />
                         <field
                             name="record_ref"
-                            attrs="{'invisible': [('storage_id_save_type', '!=', 'attachment')]}"
+                            invisible="storage_id_save_type != attachment"
                         />
                     </group>
                     <notebook>
