@@ -58,6 +58,7 @@
         "demo/file.xml",
     ],
     "images": ["static/description/banner.png"],
-    "application": True,
-    "installable": True,
+    'installable': True,
+    'auto_install': True,
+    'application': True,
 }
